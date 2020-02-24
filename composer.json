@@ -1,5 +1,5 @@
 {
-    "name"        : "oasis/aws-wrappers",
+    "name"        : "darlinkster/aws-wrappers",
     "description" : "Wrappers for AWS SDK",
     "type"        : "library",
     "require"     : {

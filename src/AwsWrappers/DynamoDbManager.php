@@ -13,6 +13,11 @@ use Aws\Result;
 
 class DynamoDbManager
 {
+    /** @var string */
+    const PROVISIONED       = 'PROVISIONED';
+    /** @var string */
+    const PAY_PER_REQUEST   = 'PAY_PER_REQUEST';
+
     /** @var array */
     protected $config;
     /** @var  DynamoDbClient */
@@ -69,6 +74,7 @@ class DynamoDbManager
      * @param DynamoDbIndex[] $globalSecondaryIndices
      * @param int             $readCapacity
      * @param int             $writeCapacity
+     * @param bool            $provisionedBilling
      *
      * @return bool
      * @internal param DynamoDbIndex $primaryKey
@@ -78,7 +84,8 @@ class DynamoDbManager
                                 array $localSecondaryIndices = [],
                                 array $globalSecondaryIndices = [],
                                 $readCapacity = 5,
-                                $writeCapacity = 5
+                                $writeCapacity = 5,
+                                $provisionedBilling = true
     )
     {
         $attrDef = $primaryIndex->getAttributeDefinitions();
@@ -101,11 +108,13 @@ class DynamoDbManager
                 "IndexName"             => $globalSecondaryIndex->getName(),
                 "KeySchema"             => $globalSecondaryIndex->getKeySchema(),
                 "Projection"            => $globalSecondaryIndex->getProjection(),
-                "ProvisionedThroughput" => [
+            ];
+            if ($provisionedBilling) {
+                $gsiDef["ProvisionedThroughput"] = [
                     "ReadCapacityUnits"  => $readCapacity,
                     "WriteCapacityUnits" => $writeCapacity,
-                ],
-            ];
+                ];
+            }
         }
         
         $lsiDef = [];
@@ -119,13 +128,17 @@ class DynamoDbManager
         
         $args = [
             "TableName"             => $tableName,
-            "ProvisionedThroughput" => [
-                "ReadCapacityUnits"  => $readCapacity,
-                "WriteCapacityUnits" => $writeCapacity,
-            ],
             "AttributeDefinitions"  => $attrDef,
             "KeySchema"             => $keySchema,
+            "BillingMode"           => $provisionedBilling ? self::PROVISIONED : self::PAY_PER_REQUEST,
         ];
+
+        if ($provisionedBilling) {
+            $args["ProvisionedThroughput"] = [
+                "ReadCapacityUnits"  => $readCapacity,
+                "WriteCapacityUnits" => $writeCapacity,
+            ];
+        }
         if ($gsiDef) {
             $args["GlobalSecondaryIndexes"] = $gsiDef;
         }
