@@ -6,10 +6,10 @@
  * Time: 16:29
  */
 
-namespace Oasis\Mlib\AwsWrappers\Test;
+namespace Darlinkster\Mlib\AwsWrappers\Test;
 
-use Oasis\Mlib\AwsWrappers\SqsQueue;
-use Oasis\Mlib\AwsWrappers\SqsReceivedMessage;
+use Darlinkster\Mlib\AwsWrappers\SqsQueue;
+use Darlinkster\Mlib\AwsWrappers\SqsReceivedMessage;
 use Oasis\Mlib\Utils\ArrayDataProvider;
 use Oasis\Mlib\Utils\DataProviderInterface;
 

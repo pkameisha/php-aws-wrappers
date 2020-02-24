@@ -6,12 +6,12 @@
  * Time: 16:54
  */
 
-namespace Oasis\Mlib\AwsWrappers\DynamoDb;
+namespace Darlinkster\Mlib\AwsWrappers\DynamoDb;
 
 use Aws\DynamoDb\DynamoDbClient;
 use Aws\DynamoDb\Exception\DynamoDbException;
 use Aws\Result;
-use Oasis\Mlib\AwsWrappers\DynamoDbItem;
+use Darlinkster\Mlib\AwsWrappers\DynamoDbItem;
 
 class MultiQueryCommandWrapper
 {

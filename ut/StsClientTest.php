@@ -6,11 +6,11 @@
  * Time: 16:55
  */
 
-namespace Oasis\Mlib\AwsWrappers\Test;
+namespace Darlinkster\Mlib\AwsWrappers\Test;
 
 use Aws\S3\Exception\S3Exception;
-use Oasis\Mlib\AwsWrappers\S3Client;
-use Oasis\Mlib\AwsWrappers\StsClient;
+use Darlinkster\Mlib\AwsWrappers\S3Client;
+use Darlinkster\Mlib\AwsWrappers\StsClient;
 
 class StsClientTest extends \PHPUnit_Framework_TestCase
 {

@@ -6,7 +6,7 @@
  * Time: 10:30
  */
 
-namespace Oasis\Mlib\AwsWrappers;
+namespace Darlinkster\Mlib\AwsWrappers;
 
 use Aws\Sns\SnsClient;
 

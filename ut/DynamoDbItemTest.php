@@ -6,9 +6,9 @@
  * Time: 17:30
  */
 
-namespace Oasis\Mlib\AwsWrappers\Test;
+namespace Darlinkster\Mlib\AwsWrappers\Test;
 
-use Oasis\Mlib\AwsWrappers\DynamoDbItem;
+use Darlinkster\Mlib\AwsWrappers\DynamoDbItem;
 
 class DynamoDbItemTest extends \PHPUnit_Framework_TestCase
 {

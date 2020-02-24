@@ -6,7 +6,7 @@
  * Time: 19:07
  */
 
-namespace Oasis\Mlib\AwsWrappers;
+namespace Darlinkster\Mlib\AwsWrappers;
 
 class S3Client extends \Aws\S3\S3Client
 {

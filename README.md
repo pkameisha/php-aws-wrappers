@@ -1,6 +1,6 @@
-# oasis/aws-wrappers
+# darlinkster/aws-wrappers
 
-The oasis/aws-wrappers component provides a collection of object oriented warppers for Amazon's official [aws/aws-php-sdk].
+The darlinkster/aws-wrappers component provides a collection of object oriented warppers for Amazon's official [aws/aws-php-sdk].
 
 ## Features
 
@@ -11,17 +11,17 @@ The oasis/aws-wrappers component provides a collection of object oriented warppe
 
 ## Installation
 
-The oasis/aws-wrappers is an open-source component available at `packagist.org`. To require the package, try the following in your project directory:
+The darlinkster/aws-wrappers is an open-source component available at `packagist.org`. To require the package, try the following in your project directory:
 
 ```bash
-composer require oasis/aws-wrappers
+composer require darlinkster/aws-wrappers
 ```
 
 ## Prerequisite
 
 #### Credentials
 
-Because oasis/aws-wrappers is only a wrapper on top of [aws/aws-php-sdk], it relies on the official SDK to authenticate client credentials. Please refer to the [official documentation] to find out how you specify credentials to the SDK
+Because darlinkster/aws-wrappers is only a wrapper on top of [aws/aws-php-sdk], it relies on the official SDK to authenticate client credentials. Please refer to the [official documentation] to find out how you specify credentials to the SDK
 
 The most commonly used credential supplying method is to use the **Profile**. You will need to setup a correct AWS profile as instructed below:
 

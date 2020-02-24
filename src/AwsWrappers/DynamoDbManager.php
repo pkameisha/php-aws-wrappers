@@ -6,7 +6,7 @@
  * Time: 20:17
  */
 
-namespace Oasis\Mlib\AwsWrappers;
+namespace Darlinkster\Mlib\AwsWrappers;
 
 use Aws\DynamoDb\DynamoDbClient;
 use Aws\Result;

@@ -6,14 +6,14 @@
  * Time: 14:30
  */
 
-namespace Oasis\Mlib\AwsWrappers;
+namespace Darlinkster\Mlib\AwsWrappers;
 
 use Oasis\Mlib\Utils\ArrayDataProvider;
 
 /**
  * Class SqsMessage
  *
- * @package Oasis\Mlib\AwsWrappers
+ * @package Darlinkster\Mlib\AwsWrappers
  *
  *          array(5) {
  * 'MessageId' =>

@@ -1,6 +1,6 @@
 <?php
 
-namespace Oasis\Mlib\AwsWrappers\Test;
+namespace Darlinkster\Mlib\AwsWrappers\Test;
 
 use Symfony\Component\Yaml\Yaml;
 

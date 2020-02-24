@@ -6,7 +6,7 @@
  * Time: 14:30
  */
 
-namespace Oasis\Mlib\AwsWrappers;
+namespace Darlinkster\Mlib\AwsWrappers;
 
 use Oasis\Mlib\Utils\ArrayDataProvider;
 use Oasis\Mlib\Utils\StringUtils;

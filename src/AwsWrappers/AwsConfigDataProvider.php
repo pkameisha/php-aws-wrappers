@@ -6,7 +6,7 @@
  * Time: 14:35
  */
 
-namespace Oasis\Mlib\AwsWrappers;
+namespace Darlinkster\Mlib\AwsWrappers;
 
 use Aws\Credentials\CredentialProvider;
 use Aws\DoctrineCacheAdapter;

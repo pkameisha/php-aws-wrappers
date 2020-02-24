@@ -6,11 +6,11 @@
  * Time: 11:40
  */
 
-namespace Oasis\Mlib\AwsWrappers\DynamoDb;
+namespace Darlinkster\Mlib\AwsWrappers\DynamoDb;
 
 use Aws\DynamoDb\DynamoDbClient;
-use Oasis\Mlib\AwsWrappers\DynamoDbIndex;
-use Oasis\Mlib\AwsWrappers\DynamoDbItem;
+use Darlinkster\Mlib\AwsWrappers\DynamoDbIndex;
+use Darlinkster\Mlib\AwsWrappers\DynamoDbItem;
 
 class ScanAsyncCommandWrapper
 {

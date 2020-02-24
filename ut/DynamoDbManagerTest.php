@@ -6,11 +6,11 @@
  * Time: 15:25
  */
 
-namespace Oasis\Mlib\AwsWrappers\Test;
+namespace Darlinkster\Mlib\AwsWrappers\Test;
 
 use Aws\DynamoDb\Exception\DynamoDbException;
-use Oasis\Mlib\AwsWrappers\DynamoDbIndex;
-use Oasis\Mlib\AwsWrappers\DynamoDbManager;
+use Darlinkster\Mlib\AwsWrappers\DynamoDbIndex;
+use Darlinkster\Mlib\AwsWrappers\DynamoDbManager;
 
 class DynamoDbManagerTest extends \PHPUnit_Framework_TestCase
 {

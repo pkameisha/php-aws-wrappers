@@ -6,7 +6,7 @@
  * Time: 17:01
  */
 
-namespace Oasis\Mlib\AwsWrappers;
+namespace Darlinkster\Mlib\AwsWrappers;
 
 interface CredentialProviderInterface
 {

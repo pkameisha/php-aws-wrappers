@@ -17,17 +17,20 @@
         {
             "name" : "Minhao Zhang",
             "email": "minhao.zhang@qq.com"
+        },
+        {
+            "name" : "Darlinkster"
         }
     ],
     "autoload"    : {
         "psr-4": {
-            "Oasis\\Mlib\\AwsWrappers\\": "src/AwsWrappers/",
-            "Oasis\\Mlib\\Logging\\"    : "src/Logging/"
+            "Darlinkster\\Mlib\\AwsWrappers\\": "src/AwsWrappers/",
+            "Darlinkster\\Mlib\\Logging\\"    : "src/Logging/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Oasis\\Mlib\\AwsWrappers\\Test\\": "ut/"
+            "Darlinkster\\Mlib\\AwsWrappers\\Test\\": "ut/"
         }
     }
 }

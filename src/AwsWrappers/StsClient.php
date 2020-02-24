@@ -6,7 +6,7 @@
  * Time: 17:04
  */
 
-namespace Oasis\Mlib\AwsWrappers;
+namespace Darlinkster\Mlib\AwsWrappers;
 
 class StsClient extends \Aws\Sts\StsClient
     implements CredentialProviderInterface
