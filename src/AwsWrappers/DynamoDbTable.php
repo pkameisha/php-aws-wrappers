@@ -35,24 +35,29 @@ class DynamoDbTable
         $this->attributeTypes = $attributeTypes;
     }
     
-    public function addGlobalSecondaryIndex(DynamoDbIndex $gsi, $readCapacity = 5, $writeCapacity = 5)
+    public function addGlobalSecondaryIndex(DynamoDbIndex $gsi, $provisionedBilling = true, $readCapacity = 5, $writeCapacity = 5)
     {
         if ($this->getGlobalSecondaryIndices(sprintf("/%s/", preg_quote($gsi->getName(), "/")))) {
             throw new \RuntimeException("Global Secondary Index exists, name = " . $gsi->getName());
         }
+        $index = [
+            'IndexName'             => $gsi->getName(),
+            'KeySchema'             => $gsi->getKeySchema(),
+            'Projection'            => $gsi->getProjection(),
+        ];
+
+        if ($provisionedBilling) {
+            $index['ProvisionedThroughput'] = [
+                'ReadCapacityUnits'  => $readCapacity,
+                'WriteCapacityUnits' => $writeCapacity,
+            ];
+        }
+
         $args = [
             'AttributeDefinitions'        => $gsi->getAttributeDefinitions(false),
             'GlobalSecondaryIndexUpdates' => [
                 [
-                    'Create' => [
-                        'IndexName'             => $gsi->getName(),
-                        'KeySchema'             => $gsi->getKeySchema(),
-                        'Projection'            => $gsi->getProjection(),
-                        'ProvisionedThroughput' => [
-                            'ReadCapacityUnits'  => $readCapacity,
-                            'WriteCapacityUnits' => $writeCapacity,
-                        ],
-                    ],
+                    'Create' => $index,
                 ],
             ],
             'TableName'                   => $this->tableName,
