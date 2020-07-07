@@ -66,7 +66,7 @@ class DynamoDbManager
         
         return $tables;
     }
-    
+
     /**
      * @param                 $tableName
      * @param DynamoDbIndex   $primaryIndex
@@ -75,6 +75,7 @@ class DynamoDbManager
      * @param int             $readCapacity
      * @param int             $writeCapacity
      * @param bool            $provisionedBilling
+     * @param string          $ttlAttribute
      *
      * @return bool
      * @internal param DynamoDbIndex $primaryKey
@@ -85,7 +86,8 @@ class DynamoDbManager
                                 array $globalSecondaryIndices = [],
                                 $readCapacity = 5,
                                 $writeCapacity = 5,
-                                $provisionedBilling = true
+                                $provisionedBilling = true,
+                                $ttlAttribute = null
     )
     {
         $attrDef = $primaryIndex->getAttributeDefinitions();
@@ -132,6 +134,14 @@ class DynamoDbManager
             "KeySchema"             => $keySchema,
             "BillingMode"           => $provisionedBilling ? self::PROVISIONED : self::PAY_PER_REQUEST,
         ];
+
+        if ($ttlAttribute !== null)
+        {
+            $args["TimeToLiveDescription"] = [
+                "AttributeName" => $ttlAttribute,
+                "TimeToLiveStatus" => "ENABLED"
+            ];
+        }
 
         if ($provisionedBilling) {
             $args["ProvisionedThroughput"] = [
