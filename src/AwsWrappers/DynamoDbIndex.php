@@ -99,7 +99,7 @@ class DynamoDbIndex
     /**
      * @return string[]
      */
-    public function getSupportedProjectionTypes() {
+    public static function getSupportedProjectionTypes() {
         return [self::PROJECTION_TYPE_ALL, self::PROJECTION_TYPE_INCLUDE, self::PROJECTION_TYPE_KEYS_ONLY];
     }
 
