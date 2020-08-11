@@ -6,16 +6,16 @@
  * Time: 14:07
  */
 
-namespace Darlinkster\Mlib\AwsWrappers;
+namespace BF\Mlib\AwsWrappers;
 
 use Aws\CloudWatch\CloudWatchClient;
 use Aws\DynamoDb\DynamoDbClient;
 use Aws\DynamoDb\Exception\DynamoDbException;
 use Aws\Result;
-use Darlinkster\Mlib\AwsWrappers\DynamoDb\MultiQueryCommandWrapper;
-use Darlinkster\Mlib\AwsWrappers\DynamoDb\ParallelScanCommandWrapper;
-use Darlinkster\Mlib\AwsWrappers\DynamoDb\QueryCommandWrapper;
-use Darlinkster\Mlib\AwsWrappers\DynamoDb\ScanCommandWrapper;
+use BF\Mlib\AwsWrappers\DynamoDb\MultiQueryCommandWrapper;
+use BF\Mlib\AwsWrappers\DynamoDb\ParallelScanCommandWrapper;
+use BF\Mlib\AwsWrappers\DynamoDb\QueryCommandWrapper;
+use BF\Mlib\AwsWrappers\DynamoDb\ScanCommandWrapper;
 
 class DynamoDbTable
 {

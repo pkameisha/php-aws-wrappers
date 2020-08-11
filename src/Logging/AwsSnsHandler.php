@@ -6,11 +6,11 @@
  * Time: 10:10
  */
 
-namespace Darlinkster\Mlib\Logging;
+namespace BF\Mlib\Logging;
 
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Logger;
-use Darlinkster\Mlib\AwsWrappers\SnsPublisher;
+use BF\Mlib\AwsWrappers\SnsPublisher;
 
 class AwsSnsHandler extends AbstractProcessingHandler
 {

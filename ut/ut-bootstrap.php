@@ -5,10 +5,10 @@
  * Date: 2017-01-05
  * Time: 16:23
  */
-use Darlinkster\Mlib\AwsWrappers\Test\UTConfig;
+use BF\Mlib\AwsWrappers\Test\UTConfig;
 use Monolog\Logger;
-use Darlinkster\Mlib\Logging\ConsoleHandler;
-use Darlinkster\Mlib\Logging\MLogging;
+use BF\Mlib\Logging\ConsoleHandler;
+use BF\Mlib\Logging\MLogging;
 
 require_once __DIR__ . "/../vendor/autoload.php";
 

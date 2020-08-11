@@ -6,7 +6,7 @@
  * Time: 14:48
  */
 
-namespace Darlinkster\Mlib\AwsWrappers;
+namespace BF\Mlib\AwsWrappers;
 
 use Oasis\Mlib\Utils\Exceptions\InvalidDataTypeException;
 

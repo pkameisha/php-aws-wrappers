@@ -1,6 +1,6 @@
-# darlinkster/aws-wrappers
+# bf-dsf/aws-wrappers
 
-The darlinkster/aws-wrappers component provides a collection of object oriented warppers for Amazon's official [aws/aws-php-sdk].
+The bf-dsf/aws-wrappers component provides a collection of object oriented warppers for Amazon's official [aws/aws-php-sdk].
 
 ## Features
 
@@ -11,17 +11,17 @@ The darlinkster/aws-wrappers component provides a collection of object oriented 
 
 ## Installation
 
-The darlinkster/aws-wrappers is an open-source component available at `packagist.org`. To require the package, try the following in your project directory:
+The bf-dsf/aws-wrappers is an open-source component available at `packagist.org`. To require the package, try the following in your project directory:
 
 ```bash
-composer require darlinkster/aws-wrappers
+composer require bf-dsf/aws-wrappers
 ```
 
 ## Prerequisite
 
 #### Credentials
 
-Because darlinkster/aws-wrappers is only a wrapper on top of [aws/aws-php-sdk], it relies on the official SDK to authenticate client credentials. Please refer to the [official documentation] to find out how you specify credentials to the SDK
+Because bf-dsf/aws-wrappers is only a wrapper on top of [aws/aws-php-sdk], it relies on the official SDK to authenticate client credentials. Please refer to the [official documentation] to find out how you specify credentials to the SDK
 
 The most commonly used credential supplying method is to use the **Profile**. You will need to setup a correct AWS profile as instructed below:
 

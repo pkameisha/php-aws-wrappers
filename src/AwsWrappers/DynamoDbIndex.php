@@ -6,7 +6,7 @@
  * Time: 16:36
  */
 
-namespace Darlinkster\Mlib\AwsWrappers;
+namespace BF\Mlib\AwsWrappers;
 
 class DynamoDbIndex
 {

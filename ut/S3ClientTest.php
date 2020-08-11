@@ -6,12 +6,12 @@
  * Time: 15:33
  */
 
-namespace Darlinkster\Mlib\AwsWrappers\Test;
+namespace BF\Mlib\AwsWrappers\Test;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use League\Uri\Schemes\Http;
-use Darlinkster\Mlib\AwsWrappers\S3Client;
+use BF\Mlib\AwsWrappers\S3Client;
 
 class S3ClientTest extends \PHPUnit_Framework_TestCase
 {

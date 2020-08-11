@@ -6,13 +6,13 @@
  * Time: 16:29
  */
 
-namespace Darlinkster\Mlib\AwsWrappers\Test;
+namespace BF\Mlib\AwsWrappers\Test;
 
 use Aws\DynamoDb\Exception\DynamoDbException;
-use Darlinkster\Mlib\AwsWrappers\DynamoDbIndex;
-use Darlinkster\Mlib\AwsWrappers\DynamoDbItem;
-use Darlinkster\Mlib\AwsWrappers\DynamoDbManager;
-use Darlinkster\Mlib\AwsWrappers\DynamoDbTable;
+use BF\Mlib\AwsWrappers\DynamoDbIndex;
+use BF\Mlib\AwsWrappers\DynamoDbItem;
+use BF\Mlib\AwsWrappers\DynamoDbManager;
+use BF\Mlib\AwsWrappers\DynamoDbTable;
 
 class DynamoDbTableTest extends \PHPUnit_Framework_TestCase
 {

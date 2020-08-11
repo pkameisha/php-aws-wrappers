@@ -1,5 +1,5 @@
 {
-    "name"        : "darlinkster/aws-wrappers",
+    "name"        : "bf-dsf/aws-wrappers",
     "description" : "Wrappers for AWS SDK",
     "type"        : "library",
     "require"     : {
@@ -20,17 +20,20 @@
         },
         {
             "name" : "Darlinkster"
+        },
+        {
+            "name" : "Business Factory"
         }
     ],
     "autoload"    : {
         "psr-4": {
-            "Darlinkster\\Mlib\\AwsWrappers\\": "src/AwsWrappers/",
-            "Darlinkster\\Mlib\\Logging\\"    : "src/Logging/"
+            "BF\\Mlib\\AwsWrappers\\": "src/AwsWrappers/",
+            "BF\\Mlib\\Logging\\"    : "src/Logging/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Darlinkster\\Mlib\\AwsWrappers\\Test\\": "ut/"
+            "BF\\Mlib\\AwsWrappers\\Test\\": "ut/"
         }
     }
 }

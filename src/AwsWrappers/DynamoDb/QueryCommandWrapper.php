@@ -6,10 +6,10 @@
  * Time: 11:40
  */
 
-namespace Darlinkster\Mlib\AwsWrappers\DynamoDb;
+namespace BF\Mlib\AwsWrappers\DynamoDb;
 
 use Aws\DynamoDb\DynamoDbClient;
-use Darlinkster\Mlib\AwsWrappers\DynamoDbItem;
+use BF\Mlib\AwsWrappers\DynamoDbItem;
 
 class QueryCommandWrapper
 {

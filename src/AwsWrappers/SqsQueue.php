@@ -6,7 +6,7 @@
  * Time: 14:24
  */
 
-namespace Darlinkster\Mlib\AwsWrappers;
+namespace BF\Mlib\AwsWrappers;
 
 use Aws\Result;
 use Aws\Sqs\Exception\SqsException;
