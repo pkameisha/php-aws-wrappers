@@ -147,7 +147,15 @@ class DynamoDbManager
 
         if ( ! empty($tags))
         {
-            $args["Tags"] = $tags;
+            $tagsDef = [];
+            foreach ($tags as $key => $value) {
+                $tagsDef[] = [
+                    "Key" => $key,
+                    "Value" => $value
+                ];
+            }
+
+            $args["Tags"] = $tagsDef;
         }
 
         if ($provisionedBilling) {
