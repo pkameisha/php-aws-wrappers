@@ -76,6 +76,7 @@ class DynamoDbManager
      * @param int             $writeCapacity
      * @param bool            $provisionedBilling
      * @param string          $ttlAttribute
+     * @param array           $tags
      *
      * @return bool
      * @internal param DynamoDbIndex $primaryKey
@@ -87,7 +88,8 @@ class DynamoDbManager
                                 $readCapacity = 5,
                                 $writeCapacity = 5,
                                 $provisionedBilling = true,
-                                $ttlAttribute = null
+                                $ttlAttribute = null,
+                                array $tags = []
     )
     {
         $attrDef = $primaryIndex->getAttributeDefinitions();
@@ -141,6 +143,11 @@ class DynamoDbManager
                 "AttributeName" => $ttlAttribute,
                 "TimeToLiveStatus" => "ENABLED"
             ];
+        }
+
+        if ( ! empty($tags))
+        {
+            $args["Tags"] = $tags;
         }
 
         if ($provisionedBilling) {
