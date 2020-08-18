@@ -95,7 +95,14 @@ class DynamoDbIndex
         
         return $keySchema;
     }
-    
+
+    /**
+     * @return string[]
+     */
+    public static function getSupportedProjectionTypes() {
+        return [self::PROJECTION_TYPE_ALL, self::PROJECTION_TYPE_INCLUDE, self::PROJECTION_TYPE_KEYS_ONLY];
+    }
+
     public function getProjection()
     {
         $projection = [
