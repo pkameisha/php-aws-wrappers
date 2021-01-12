@@ -26,6 +26,8 @@ class DynamoDbTable
     
     protected $tableName;
     protected $attributeTypes = [];
+
+    private static $describeCache = [];
     
     function __construct(array $awsConfig, $tableName, $attributeTypes = [])
     {
@@ -228,7 +230,11 @@ class DynamoDbTable
         $requestArgs = [
             "TableName" => $this->tableName,
         ];
-        $result      = $this->dbClient->describeTable($requestArgs);
+        if (isset(self::$describeCache[$this->tableName])) {
+            return self::$describeCache[$this->tableName]['Table'];
+        }
+        $result = $this->dbClient->describeTable($requestArgs);
+        self::$describeCache[$this->tableName] = $result;
         
         return $result['Table'];
     }
