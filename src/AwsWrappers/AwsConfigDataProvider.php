@@ -20,8 +20,8 @@ class AwsConfigDataProvider
     /**
      * AwsConfigDataProvider constructor.
      *
-     * @param array $data
-     * @param null  $version
+     * @param array        $data
+     * @param string|null  $version
      */
     public function __construct(array $data, $version = null)
     {
