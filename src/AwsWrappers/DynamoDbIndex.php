@@ -185,9 +185,15 @@ class DynamoDbIndex
         if ($this->projectionType != $other->projectionType) {
             return false;
         }
+        $projectedAttr = $this->projectedAttributes;
+        $projectedAttrOther = $other->projectedAttributes;
+        asort($projectedAttr);
+        asort($projectedAttrOther);
+        $projectedAttr = array_values($projectedAttr);
+        $projectedAttrOther = array_values($projectedAttrOther);
         if ($this->projectionType == self::PROJECTION_TYPE_INCLUDE
-            && (array_diff_assoc($this->projectedAttributes, $other->projectedAttributes)
-                || array_diff_assoc($other->projectedAttributes, $this->projectedAttributes))
+            && (array_diff_assoc($projectedAttr, $projectedAttrOther)
+                || array_diff_assoc($projectedAttrOther, $projectedAttr))
         ) {
             return false;
         }
