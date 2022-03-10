@@ -137,14 +137,6 @@ class DynamoDbManager
             "BillingMode"           => $provisionedBilling ? self::PROVISIONED : self::PAY_PER_REQUEST,
         ];
 
-        if ($ttlAttribute !== null)
-        {
-            $args["TimeToLiveDescription"] = [
-                "AttributeName" => $ttlAttribute,
-                "TimeToLiveStatus" => "ENABLED"
-            ];
-        }
-
         if ( ! empty($tags))
         {
             $tagsDef = [];
@@ -172,6 +164,17 @@ class DynamoDbManager
         }
         
         $result = $this->db->createTable($args);
+
+        if ($ttlAttribute !== null)
+        {
+            $this->db->updateTimeToLive([
+                "TableName" => $tableName,
+                "TimeToLiveSpecification" => [
+                    "AttributeName" => $ttlAttribute,
+                    "Enabled" => true,
+                ]
+            ]);
+        }
         
         if (isset($result['TableDescription']) && $result['TableDescription']) {
             return true;
