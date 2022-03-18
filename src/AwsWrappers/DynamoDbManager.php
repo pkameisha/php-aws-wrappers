@@ -167,6 +167,7 @@ class DynamoDbManager
 
         if ($ttlAttribute !== null)
         {
+            $this->waitForTableCreation($tableName);
             $this->db->updateTimeToLive([
                 "TableName" => $tableName,
                 "TimeToLiveSpecification" => [
