@@ -75,7 +75,6 @@ class DynamoDbManager
      * @param int             $readCapacity
      * @param int             $writeCapacity
      * @param bool            $provisionedBilling
-     * @param string          $ttlAttribute
      * @param array           $tags
      *
      * @return bool
@@ -88,7 +87,6 @@ class DynamoDbManager
                                 $readCapacity = 5,
                                 $writeCapacity = 5,
                                 $provisionedBilling = true,
-                                $ttlAttribute = null,
                                 array $tags = []
     )
     {
@@ -164,20 +162,32 @@ class DynamoDbManager
         }
         
         $result = $this->db->createTable($args);
-
-        if ($ttlAttribute !== null)
-        {
-            $this->waitForTableCreation($tableName);
-            $this->db->updateTimeToLive([
-                "TableName" => $tableName,
-                "TimeToLiveSpecification" => [
-                    "AttributeName" => $ttlAttribute,
-                    "Enabled" => true,
-                ]
-            ]);
-        }
         
         if (isset($result['TableDescription']) && $result['TableDescription']) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    /**
+     * @param string $tableName
+     * @param string $ttlAttribute
+     *
+     * @return bool
+     */
+    public function updateTimeToLive($tableName, $ttlAttribute)
+    {
+        $result = $this->db->updateTimeToLive([
+            "TableName" => $tableName,
+            "TimeToLiveSpecification" => [
+                "AttributeName" => $ttlAttribute,
+                "Enabled" => true,
+            ]
+        ]);
+
+        if (isset($result['TimeToLiveSpecification']) && $result['TimeToLiveSpecification']) {
             return true;
         }
         else {
