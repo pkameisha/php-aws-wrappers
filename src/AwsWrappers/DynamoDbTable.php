@@ -28,7 +28,8 @@ class DynamoDbTable
     protected $attributeTypes = [];
 
     private static $describeCache = [];
-    
+    private static $describeTTLCache = [];
+
     function __construct(array $awsConfig, $tableName, $attributeTypes = [])
     {
         $dp                   = new AwsConfigDataProvider($awsConfig, '2012-08-10');
@@ -236,6 +237,20 @@ class DynamoDbTable
         $result = $this->dbClient->describeTable($requestArgs);
         self::$describeCache[$this->tableName] = $result;
         
+        return $result['Table'];
+    }
+
+    public function describeTimeToLive()
+    {
+        $requestArgs = [
+            "TableName" => $this->tableName,
+        ];
+        if (isset(self::$describeTTLCache[$this->tableName])) {
+            return self::$describeTTLCache[$this->tableName]['Table'];
+        }
+        $result = $this->dbClient->describeTimeToLive($requestArgs);
+        self::$describeTTLCache[$this->tableName] = $result;
+
         return $result['Table'];
     }
     
