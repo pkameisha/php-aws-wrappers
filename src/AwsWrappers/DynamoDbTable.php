@@ -246,12 +246,12 @@ class DynamoDbTable
             "TableName" => $this->tableName,
         ];
         if (isset(self::$describeTTLCache[$this->tableName])) {
-            return self::$describeTTLCache[$this->tableName]['Table'];
+            return self::$describeTTLCache[$this->tableName]['TimeToLiveDescription'];
         }
         $result = $this->dbClient->describeTimeToLive($requestArgs);
         self::$describeTTLCache[$this->tableName] = $result;
 
-        return $result['Table'];
+        return $result['TimeToLiveDescription'];
     }
     
     public function disableStream()
