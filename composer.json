@@ -5,9 +5,9 @@
     "require"     : {
         "php": "^7.1 || ^8.0",
         "aws/aws-sdk-php": "^3.22",
-        "oasis/logging"  : "^1.3",
-        "oasis/event"    : "^1.0",
-        "doctrine/common": "^2.13.1"
+        "doctrine/common": "^2.13",
+        "oasis/event": "^1.0",
+        "oasis/logging": "^1.3"
     },
     "require-dev" : {
         "phpunit/phpunit"   : "^9.5",
@@ -26,6 +26,10 @@
             "name" : "Business Factory"
         }
     ],
+    "config": {
+        "bin-dir": "bin",
+        "sort-packages": true
+    },
     "autoload"    : {
         "psr-4": {
             "BF\\Mlib\\AwsWrappers\\": "src/AwsWrappers/",
