@@ -5,7 +5,8 @@
     "require"     : {
         "php": "^7.1 || ^8.0",
         "aws/aws-sdk-php": "^3.22",
-        "doctrine/common": "~2.13",
+        "doctrine/cache": "~1.13",
+        "doctrine/common": "^3.0",
         "oasis/event": "^1.0",
         "oasis/logging": "^1.3"
     },
