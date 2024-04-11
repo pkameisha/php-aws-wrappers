@@ -221,7 +221,7 @@ class DynamoDbItem implements \ArrayAccess
      * The return value will be casted to boolean if non-boolean was returned.
      * @since 5.0.0
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return array_key_exists($offset, $this->data);
     }
@@ -237,7 +237,10 @@ class DynamoDbItem implements \ArrayAccess
      *
      * @return mixed Can return all value types.
      * @since 5.0.0
+     *
+     * TODO: Change to `mixed` return value for php version 8.0 and higher
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         if (!array_key_exists($offset, $this->data)) {
@@ -262,7 +265,7 @@ class DynamoDbItem implements \ArrayAccess
      * @return void
      * @since 5.0.0
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         $this->data[$offset] = static::toTypedValue($value);
     }
@@ -279,7 +282,7 @@ class DynamoDbItem implements \ArrayAccess
      * @return void
      * @since 5.0.0
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         if (!array_key_exists($offset, $this->data)) {
             throw new \OutOfBoundsException("Attribute $offset does not exist in DynamoDbItem!");
