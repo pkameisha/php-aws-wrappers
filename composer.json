@@ -1,5 +1,5 @@
 {
-    "name"        : "bf-dsf/aws-wrappers",
+    "name"        : "pkameisha/aws-wrappers",
     "description" : "Wrappers for AWS SDK",
     "type"        : "library",
     "require"     : {
